@@ -10,7 +10,7 @@ const fs = require("fs");
 
 app.use(express.json()); // middleware
 
-// Express
+// Express Server
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
