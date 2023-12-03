@@ -11,7 +11,7 @@ This project is a web application utilizing Express.js to manage a contact direc
 
 ## Prerequisites / Built With
 
-- Node.js
+- Node.js, CORS
 - Back End: Express.js
 - Database: Local JSON file
 - Front End: HTML, CSS, JavaScript
@@ -25,8 +25,9 @@ This project is a web application utilizing Express.js to manage a contact direc
 
 ## Interacting with the API
 
-...
+To interact with the API via your web browser, you can add a contact through the input fields on the contact form on the required fields (name, phone, email) address is optional. and hit add. The contact will be added to the Contacts list below and you can then edit/update or delete.
 
 ## Gallery
 
-(insert screenshots)
+![User Interface](./img/userinterface.png)
+![API Example](./img/apiexample.png)

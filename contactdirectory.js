@@ -11,7 +11,7 @@ const cors = require("cors");
 
 app.use(express.static("public"));
 
-app.use(cors());
+app.use(cors()); 
 app.use(express.json()); // Middleware for JSON
 
 // FS functions for contacts.json

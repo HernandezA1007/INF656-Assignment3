@@ -31,5 +31,12 @@
     "phone": "785-123-4000",
     "email": "School123@gmail.com",
     "address": ""
+  },
+  {
+    "id": 1701548690212,
+    "name": "Gary Gonzales",
+    "phone": "785-123-1010",
+    "email": "garygary123@fhsu.edu",
+    "address": ""
   }
 ]
