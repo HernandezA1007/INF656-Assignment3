@@ -1,72 +1,127 @@
 /* Body */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f7f7f7;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Nav/Header */
-header {
-    background: #50b3a2;
-    color: white;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #e8491d 3px solid;
-}
-
-header a {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
     font-size: 16px;
 }
 
-header ul {
-    padding: 0;
+h1, h2 {
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 1170px; /* 1200 */
+    margin: auto;
+    overflow: auto;
+}
+
+/* Card Design for Contacts */
+.contact-item {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex; /* grid */
+    /* grid-template-columns: 2fr 1fr 1fr 1fr auto; */
+    /* gap: 10px; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-item h3 {
     margin: 0;
-    list-style: none;
-    overflow: hidden;
+    color: #333;
 }
 
-header li {
-    float: left;
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-
-header #branding {
-    float: left;
-}
-
-header #branding h1 {
+.contact-item p {
     margin: 0;
 }
 
-header nav {
-    float: right;
-    margin-top: 10px;
+
+/* Button */
+button {
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
 }
 
-header .highlight, header .current a {
-    color: #e8491d;
-    font-weight: bold;
+.edit:hover {
+    background-color: #45a049;
 }
 
-header a:hover {
-    color: #ffffff;
-    font-weight: bold;
+.delete-button {
+    background-color: #f44336;
 }
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Input Styles */
+input[type='text'],
+input[type='email'],
+input[type='tel'] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+/* Form Submission Button */
+input[type='submit'] {
+    background-color: #008CBA; /* Different color for primary action */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type='submit']:hover {
+    background-color: #007B9E;
+}
+
+/* Layout Adjustments */
+#addContactForm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+#contactsList {
+    margin-top: 30px;
+}
+
+
+.form-group:last-child {
+    align-self: center;
+    justify-self: end;
+}
+
+
 
 /* Form */
-.form-group {
+/*.form-group {
     margin-bottom: 15px;
 }
 
@@ -82,26 +137,50 @@ header a:hover {
     border: 1px solid #ddd;
 }
 
-button, .btn {
-    display: inline-block;
-    background: #e8491d;
-    color: #ffffff;
-    padding: 10px 20px;
+button {
+    background-color: #f44336;
+    color: white;
     border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
     cursor: pointer;
+    border-radius: 4px;
 }
 
-button:hover, .btn:hover {
-    background: #333;
+button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #f44336;
 }
 
 #contactsList {
     margin-top: 20px;
 }
 
+
 .contact-item {
-    background: #fff;
-    padding: 10px;
+    background: #ffffff;
+    padding: 10px 15px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.contact-item h3 {
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.contact-item p {
+    margin: 5px 0;
+}
+*/
