@@ -7,13 +7,32 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const fs = require("fs");
+const cors = require("cors");
 
-app.use(express.json()); // middleware
+app.use(cors());
+app.use(express.json()); // middleware for JSON
+
+// Middleware validation
+function validateContact(req, res, next) {
+    const { name, phone, email } = req.body;
+    if (!name || !phone || !email) {
+        // return res.status(400).send("Missing required fields");
+        return res.status(400).json({ error: "Missing required fields" });
+
+    }
+    next();
+}
+
+app.use("/contacts", validateContact);
+
+app.use(express.static(".")); // index.html or front end
 
 // Express Server
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
+
+// Routes...
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
@@ -33,7 +52,7 @@ function writeContacts(contacts) {
 // get all contacts
 app.get("/contacts", (req, res) => {
     let contacts = readContacts();
-    res.join(contacts);
+    res.json(contacts);
 });
 
 // get one contact
@@ -48,11 +67,14 @@ app.get("/contacts/:id", (req, res) => {
 });
 
 // post (add)
-app.post("/contacts", (req, res) => {
+app.post("/contacts", validateContact, (req, res) => {
     let contacts = readContacts();
     // let newContact = req.body;
+    let newId = contacts.length > 0 ? Math.max(...contacts.map(contact => contact.id)) + 1 : 1;
     let newContact = {
-        id: Date.now(),
+        // id: Date.now(),
+        // id: contacts.length + 1,
+        id: newId,
         ...req.body
     };
     contacts.push(newContact);
@@ -61,7 +83,7 @@ app.post("/contacts", (req, res) => {
 });
 
 // put (update)
-app.put("/contacts/:id", (req, res) => {
+app.put("/contacts/:id", validateContact, (req, res) => {
     let contacts = readContacts();
     let index = contacts.findIndex(c => c.id == req.params.id);
     if (index !== -1) {
@@ -85,16 +107,3 @@ app.delete("/contacts/:id", (req, res) => {
         res.status(404).send("Contact not found");
     }
 });
-
-// Middleware validation
-function validateContact(req, res, next) {
-    const { name, phoneNumber, email } = req.body;
-    if (!name || !phoneNumber || !email) {
-        return res.status(400).send("Missing required fields");
-    }
-
-    next();
-
-}
-
-app.use("/contacts", validateContact);

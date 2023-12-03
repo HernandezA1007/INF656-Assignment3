@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "phone": "123-456-8000",
+    "email": "example@hotmail.com"
+  },
+  {
+    "id": 1701548690207,
+    "name": "jun",
+    "phone": "555-1007-1234",
+    "email": "jun123@gmail.com"
+  },
+  {
+    "id": 1701548690208,
+    "name": "John Smith",
+    "phone": "800-444-1234",
+    "email": "Smith14@gmail.com",
+    "address": ""
+  },
+  {
+    "id": 1701548690209,
+    "name": "John Smith",
+    "phone": "800-444-1234",
+    "email": "Smith14@gmail.com",
+    "address": ""
+  },
+  {
+    "id": 1701548690210,
+    "name": "John Johnson",
+    "phone": "785-400-1234",
+    "email": "fhsu@gmail.com",
+    "address": "123 school st"
+  },
+  {
+    "id": 1701548690211,
+    "name": "John",
+    "phone": "785-123-4000",
+    "email": "School123@gmail.com",
+    "address": ""
+  }
+]
